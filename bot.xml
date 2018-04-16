@@ -11,10 +11,7 @@
     <var name="CanShowOutput" value="javascript: showOutput($RequestedOrder, $OrderNumber, $OrderShipped, $OrderTrackingUrl)"/>
     
     <output if='$CanShowOutput'>
-      <![CDATA[
-      <p>Here's the tracking link, you can check the status of the delivery directly from here $OrderTrackingUrl</p>
-      <p>Your order number is $OrderNumber</p>
-      ]]>
+      Hello
     </output>
 
   </input>
