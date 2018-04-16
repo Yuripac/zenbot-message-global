@@ -9,15 +9,13 @@
     <var name="OrderShipped" value="javascript: $Data.order.shipped"/>
     <var name="OrderTrackingUrl" value="javascript: $Data.order.tracking_url"/>
     <var name="CanShowOutput" value="javascript: showOutput($RequestedOrder, $OrderNumber, $OrderShipped, $OrderTrackingUrl)"/>
-
-    <context if='$CanShowOutput == true'>
-      <output>
-        <![CDATA[
-        <p>Here's the tracking link, you can check the status of the delivery directly from here $OrderTrackingUrl</p>
-        <p>Your order number is $OrderNumber</p>
-        ]]>
-      </output>
-    </context>
+    
+    <output if='$CanShowOutput'>
+      <![CDATA[
+      <p>Here's the tracking link, you can check the status of the delivery directly from here $OrderTrackingUrl</p>
+      <p>Your order number is $OrderNumber</p>
+      ]]>
+    </output>
 
   </input>
 </context>
