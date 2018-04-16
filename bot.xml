@@ -8,8 +8,9 @@
     <var name="OrderNumber" value="javascript: $Data.order.number"/>
     <var name="OrderShipped" value="javascript: $Data.order.shipped"/>
     <var name="OrderTrackingUrl" value="javascript: $Data.order.tracking_url"/>
+    <var name="CanShowOutput" value="javascript: showOutput($RequestedOrder, $OrderNumber, $OrderShipped, $OrderTrackingUrl)"/>
 
-    <context if='$RequestedOrder == null and $OrderNumber != null and $OrderShipped == true and $OrderTrackingUrl != null'>
+    <context if='$CanShowOutput'>
       <output>
         <![CDATA[
         <p>Here's the tracking link, you can check the status of the delivery directly from here $OrderTrackingUrl</p>
