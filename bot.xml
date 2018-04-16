@@ -6,8 +6,8 @@
     </get>
 
     <var name="OrderNumber" value="javascript: $Data.order.number"/>
-    <var name="OrderShipped" value="javascript: $Data.order.shipped">
-    <var name="OrderTrackingUrl" value="javascript: $Data.order.tracking_url">
+    <var name="OrderShipped" value="javascript: $Data.order.shipped"/>
+    <var name="OrderTrackingUrl" value="javascript: $Data.order.tracking_url"/>
 
     <context if='!$RequestedOrder and $OrderNumber and $OrderShipped and $OrderTrackingUrl'>
       <output>
