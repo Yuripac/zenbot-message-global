@@ -1,14 +1,5 @@
 <context>
   <input id="purchase" pattern="* blablableble *">
-    <var name="RequestedOrder" value="javascript: $req_text.match(/\d{13}/) ? $req_text.match(/\d{13}/)[0] : null"/>
-    <get url="http://factory.gocase.com.br/api/v1/zenbot/order_details" var="Data">
-      <param name="email" value="katelynn.mariee@yahoo.com"/>
-    </get>
-
-    <var name="OrderNumber" value="javascript: $Data.order.number"/>
-    <var name="OrderShipped" value="javascript: $Data.order.shipped"/>
-    <var name="OrderTrackingUrl" value="javascript: $Data.order.tracking_url"/>
-    <var name="CanShowOutput" value="javascript: showOutput($RequestedOrder, $OrderNumber, $OrderShipped, $OrderTrackingUrl)"/>
     
     <output if='true'>
       Hello
