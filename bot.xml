@@ -10,7 +10,7 @@
     <var name="OrderTrackingUrl" value="javascript: $Data.order.tracking_url"/>
     <var name="CanShowOutput" value="javascript: showOutput($RequestedOrder, $OrderNumber, $OrderShipped, $OrderTrackingUrl)"/>
     
-    <context if="1 == 1">
+    <context if="eq($CanShowOutput, true) == 1">
       <output>
         Hello
       </output>
