@@ -11,7 +11,7 @@
     <var name="CanShowOutput" value="javascript: showOutput($RequestedOrder, $OrderNumber, $OrderShipped, $OrderTrackingUrl)"/>
     
     <context if="eq($CanShowOutput, true)">
-      <output value="Hello">
+      <output value="Hello"/>
     </context>    
 
   </input>
