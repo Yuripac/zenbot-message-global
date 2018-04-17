@@ -12,7 +12,10 @@
     
     <context if="$CanShowOutput == 1">
       <output>
-        Hello
+        <![CDATA[        
+        <p>Here's the tracking link, you can check the status of the delivery directly from here $OrderTrackingUrl</p>
+        <p>Your order number is <b>$OrderNumber</b></p>        
+        ]]>
       </output>
     </context>    
 
