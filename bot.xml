@@ -13,13 +13,15 @@
     <context if='$OrderInProduction and !$OrderPostingIsLate'>
       <output>
         <![CDATA[
-        <p>Hey there,</p></br>
+        <p>Hey there,</p>
+        
+        <p>
+          Your order is still in production! This process shouldn't take longer than 3 business days after we receive your payment.</br>
+          As soon as your package is dispatched, you will receive an email with a tracking code, where you can check out the location and last updates of your package at any given moment 🙂</br>
+          Feel free to contact us if more than 3 business days have gone by and your order is still processing, so we can check out if there's any issues.</br>
+        </p>
 
-        <p>Your order is still in production! This process shouldn't take longer than 3 business days after we receive your payment.</p>
-        <p>As soon as your package is dispatched, you will receive an email with a tracking code, where you can check out the location and last updates of your package at any given moment 🙂</p>
-        <p>Feel free to contact us if more than 3 business days have gone by and your order is still processing, so we can check out if there's any issues.</p></br>
-
-        Have a very nice day! 😉
+        <p>Have a very nice day! 😉</p>
         ]]>
       </output>
     </context>
