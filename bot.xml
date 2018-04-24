@@ -1,23 +1,28 @@
 <context>
-  <input id="purchase" pattern="* blablableble *">
-    <var name="RequestedOrder" value="javascript: $req_text.match(/\d{13}/) ? $req_text.match(/\d{13}/)[0] : null"/>
-    <get url="http://factory.gocase.com.br/api/v1/zenbot/order_details" var="Data">      
-      <param name="email" value="$req_user_email"/>
+  <input id="purchase" pattern="* (track|tracking) *">
+    <var name="RequestedOrder" value="javascript: $req_text.match(/\d{13}/) ? $req_text.match(/\d{13}/)[0] : ''"/>
+    <get url="http://factory.gocase.com.br/api/v1/zenbot/order_details" var="Data">
+      <param name="email" value="juletrule@t-online.de"/>
+      <param name="reference" value="$RequestedOrder"/>
     </get>
 
     <var name="OrderNumber" value="javascript: $Data.order.number"/>
-    <var name="OrderShipped" value="javascript: $Data.order.shipped"/>
-    <var name="OrderTrackingUrl" value="javascript: $Data.order.tracking_url"/>
-    <var name="CanShowOutput" value="javascript: showOutput($RequestedOrder, $OrderNumber, $OrderShipped, $OrderTrackingUrl)"/>
-    
-    <context if="$CanShowOutput == 1">
+    <var name="OrderInProduction" value="javascript: $Data.order.in_production"/>
+    <var name="OrderPostingIsLate" value="javascript: $Data.order.posting_is_late"/>
+
+    <context if='$OrderInProduction and !$OrderPostingIsLate'>
       <output>
-        <![CDATA[        
-        <p>Here's the tracking link, you can check the status of the delivery directly from here $OrderTrackingUrl</p>
-        <p>Your order number is <b>$OrderNumber</b></p>        
+        <![CDATA[
+        <p>Hey there,</p></br>
+
+        <p>Your order is still in production! This process shouldn't take longer than 3 business days after we receive your payment.</p>
+        <p>As soon as your package is dispatched, you will receive an email with a tracking code, where you can check out the location and last updates of your package at any given moment 🙂</p>
+        <p>Feel free to contact us if more than 3 business days have gone by and your order is still processing, so we can check out if there's any issues.</p></br>
+
+        Have a very nice day! 😉
         ]]>
       </output>
-    </context>    
+    </context>
 
   </input>
 </context>
