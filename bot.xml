@@ -2,7 +2,7 @@
   <input id="purchase" pattern="* testzenbot *">
     <var name="RequestedOrder" value="javascript: $req_text.match(/\d{13}/) ? $req_text.match(/\d{13}/)[0] : ''"/>
     <get url="http://factory.gocase.com.br/api/v1/zenbot/order_details" var="Data">
-      <param name="email" value="juletrule@t-online.de"/>
+      <param name="email" value="samrawitandebrhan@yahoo.com"/>
       <param name="reference" value="$RequestedOrder"/>
     </get>
 
@@ -14,7 +14,7 @@
       <output>
         <![CDATA[
         <p>Hey there,</p>
-        
+
         <p>
           Your order is still in production! This process shouldn't take longer than 3 business days after we receive your payment.</br>
           As soon as your package is dispatched, you will receive an email with a tracking code, where you can check out the location and last updates of your package at any given moment 🙂</br>
